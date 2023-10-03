@@ -1,0 +1,233 @@
+{% extends "index.html" %}
+{% load static %}
+{% block title %}
+Home | Fraud Detection System
+{% endblock %}
+
+{% block css %}
+
+<link href="{% static 'assets/css/teststyle.css' %}" rel="stylesheet">
+<link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+<style>
+    
+    .table-container {
+    width: 90%;
+    overflow-x: auto; 
+    max-height: 500px; 
+    margin: 5% 5% 5% 5%;
+  }
+    .example {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+  
+    .example th,
+    .example td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+      white-space: nowrap; 
+      overflow: hidden; 
+      text-overflow: ellipsis; 
+      width: 170px;
+    }
+  
+    .example th {
+      background-color: #f2f2f2;
+    }
+  
+    .example tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+  
+    .example tr:hover {
+      background-color: #ddd;
+    }
+  
+    .pagination {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      margin-top: -5%;
+      margin-bottom: 5%;
+    }
+  
+    .pagination a {
+      color: black;
+      float: left;
+      padding: 8px 16px;
+      text-decoration: none;
+      transition: background-color .3s;
+    }
+  
+    .pagination a.active {
+      background-color: #4CAF50;
+      color: white;
+    }
+  
+    .pagination a:hover:not(.active) {
+      background-color: #ddd;
+    }
+  </style>
+
+{% endblock %}
+{% block content %}
+
+<main id="main" >
+
+    <!-- ======= Hero Section ======= -->
+    <section id="homesection" style="padding: 0px 0px;"></section> 
+         <!--__________________________________ header-box______________________________________________ -->
+         <div id="header-container" style="
+         background-image: url(/static/assets/img/slide/Rectangle%203.png);
+         background-repeat: no-repeat;
+         height: 32vh;
+         background-position: center bottom;
+         background-size: 100% auto;
+         "></div>
+ <div id="header-container">
+	<h1 id="header2">VER DADOS</h1>
+
+</div>
+
+<div class="table-container">
+<table id="example">
+<thead>
+    <tr>
+        <th>SrNo.</th>
+        <th>Time</th>
+        <th>V1</th>
+        <th>V2</th>
+        <th>V3</th>
+        <th>V4</th>
+        <th>V5</th>
+        <th>V6</th>
+        <th>V7</th>
+        <th>V8</th>
+        <th>V9</th>
+        <th>V10</th>
+        <th>V11</th>
+        <th>V12</th>
+        <th>V13</th>
+        <th>V14</th>
+        <th>V15</th>
+        <th>V16</th>
+        <th>V17</th>
+        <th>V18</th>
+        <th>V19</th>
+        <th>V20</th>
+        <th>V21</th>
+        <th>V22</th>
+        <th>V23</th>
+        <th>V24</th>
+        <th>V25</th>
+        <th>V26</th>
+        <th>V27</th>
+        <th>V28</th>
+        <th>Amount</th>
+        <th>Class</th>
+    </tr>
+</thead>
+<tbody>
+{% for row in page_obj %}
+
+<tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ row.Time }}</td>
+            <td>{{ row.V1 }}</td>
+            <td>{{ row.V2 }}</td>
+            <td>{{ row.V3 }}</td>
+            <td>{{ row.V4 }}</td>
+            <td>{{ row.V5 }}</td>
+            <td>{{ row.V6 }}</td>
+            <td>{{ row.V7 }}</td>
+            <td>{{ row.V8 }}</td>
+            <td>{{ row.V9 }}</td>
+            <td>{{ row.V10 }}</td>
+            <td>{{ row.V11 }}</td>
+            <td>{{ row.V12 }}</td>
+            <td>{{ row.V13}}</td>
+            <td>{{ row.V14 }}</td>
+            <td>{{ row.V15 }}</td>
+            <td>{{ row.V16 }}</td>
+            <td>{{ row.V17 }}</td>
+            <td>{{ row.V18 }}</td>
+            <td>{{ row.V19 }}</td>
+            <td>{{ row.V20 }}</td>
+            <td>{{ row.V21 }}</td>
+            <td>{{ row.V22}}</td>
+            <td>{{ row.V23 }}</td>
+            <td>{{ row.V24 }}</td>
+            <td>{{ row.V25 }}</td>
+            <td>{{ row.V26 }}</td>
+            <td>{{ row.V27 }}</td>
+            <td>{{ row.V28 }}</td>
+            <td>{{row.Amount}}</td>
+            <td>{{row.Class}}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+<div class="pagination">
+    <span class="step-links">
+      {% if page_obj.has_previous %}
+        <a href="?page=1">&laquo; first</a>
+        <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+      {% endif %}
+  
+      <span class="current">
+        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+      </span>
+  
+      {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}">next</a>
+        <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+      {% endif %}
+    </span>
+  </div>
+    </section><!-- End Hero -->
+  
+    </main>
+
+    <script>
+      $(document).ready(function() {
+        $('#example').DataTable({
+          dom: 'Bfrtip',
+          buttons: [
+            { 
+              extend: 'copy',
+              text: 'Copy'
+            },
+            { 
+              extend: 'excel',
+              text: 'Download excel'
+            },   
+          ],
+          initComplete: function () {
+            var btns = $('.dt-button');
+            btns.addClass('btn btn-primary btn-sm ');
+            btns.removeClass('dt-button');
+          },
+          
+          columnDefs: [
+            {
+              targets: 0, // Primeira coluna (index 0)
+              searchable: true,
+              orderable: true,
+            },
+            {
+              targets: '_all', // Todas outras colunas
+              searchable: false,
+              orderable: true,
+            },
+          ],
+        });
+      });
+  
+    </script>
+    
+{% endblock %}
+

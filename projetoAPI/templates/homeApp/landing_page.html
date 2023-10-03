@@ -1,0 +1,141 @@
+{% extends "index.html" %}
+{% load static %}
+{% block title %}
+Home | Fraud Detection System
+{% endblock %}
+
+{% block content %}
+<main id="main">
+
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" style="height: 55vh;">
+      <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+        <div class="carousel-inner" role="listbox">
+  
+          <!-- Slide 1 -->
+          <div class="carousel-item active" style="background-image: url({% static 'assets/img/slide/Rectangle 3.png' %})">
+            <div class="carousel-container">
+              <div class="container" >
+                <h2 class="animate__animated animate__fadeInDown">Bem-vindo ao <span>Sistema de Detecção de Fraude de Cartão de Crédito</span></h2>
+                <p class="animate__animated animate__fadeInUp">Solução completa para detecção de fraudes em cartões de crédito</p>  </div>
+            </div>
+          </div>
+  
+          <!-- Slide 2 -->
+          <div class="carousel-item" style="background-image: url({% static 'assets/img/slide/Rectangle 3.png' %})">
+            <div class="carousel-container">
+              <div class="container">
+                <h2>Gerenciamento de arquivos e usuários</h2>
+                <p class="animate__animated animate__fadeInUp">Gestão de cartão de crédito e arquivos</p>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Slide 3 -->
+          <div class="carousel-item" style="background-image: url({% static 'assets/img/slide/Rectangle 3.png' %})">
+            <div class="carousel-container">
+              <div class="container">
+                <h2 class="animate__animated animate__fadeInDown">Última tecnologia e uso de infraestrutura</h2>
+                <p class="animate__animated animate__fadeInUp">Última Tecnologia e Infraestrutura</p>
+              </div>
+            </div>
+          </div>
+  
+        </div>
+  
+        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+        </a>
+  
+        <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+        </a>
+  
+      </div>
+    </section><!-- End Hero -->
+  
+    </main>
+  
+       <!-- ======= Team Section ======= -->
+       <section id="team" class="team section-bg" style="
+       width: 85%;">
+        <div class="container">
+  
+          <div class="section-title" style="width: 100%;">
+            <h2>Time</h2>
+            <p>Estamos aprendendo e crescendo juntos. Membros do Time 10 de desenvolvimento do módulo onça-pintada do pantanal.dev</p>
+          </div>
+  
+          <div class="row"style="
+          width: max-content;">
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch" style="
+            width: auto;">
+              <div class="member">
+                <img src="{% static 'assets/img/team/ph.png' %}" alt="">
+                <h4>Pedro Henrique</h4>
+                <span>Graduando de Engenharia da Computação pela UFMS</span>
+                <p>
+                  Graduando de Engenharia da Computação pela UFMS.
+                </p>
+                <div class="social">
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch" style="
+            width: auto;">
+              <div class="member">
+                <img src="{% static 'assets/img/team/davi.png' %}" alt="">
+                <h4>Davi Mortari</h4>
+                <span>Graduando de Engenharia da Computação pela UFMS</span>
+                <p>
+                  Graduando de Engenharia da Computação pela UFMS
+                </p>
+                <div class="social">
+                  
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch" style="
+            width: auto;">
+      
+              <div class="member"style="
+              height: auto;
+              width: 375.24px;">
+                <img src="{% static 'assets/img/team/matheus.png' %}" alt="">
+                <h4>Matheus Vieira </h4>
+                <span>Graduando de Ciência da Computação pela UFMS</span>
+                <p>
+                  Graduando de Ciência da Computação pela UFMS.  </p>
+                <div class="social">
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch" style="
+            width: auto;">
+              <div class="member">
+                <img src="{% static 'assets/img/team/isa.png' %}" alt="">
+                <h4>Isabella </h4>
+                <span>Graduanda de Engenharia da Computação pela UFMS</span>
+                <p>
+                  Graduanda de Engenharia da Computação pela UFMS  </p>
+                <div class="social">
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+  
+          </div>
+  
+        </div>
+      </section><!-- End Team Section -->
+{% endblock %}

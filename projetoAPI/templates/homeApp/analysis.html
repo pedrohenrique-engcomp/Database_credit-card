@@ -1,0 +1,192 @@
+{% extends "index.html" %}
+{% load static %}
+{% block title %}
+Home | Fraud Detection System
+{% endblock %}
+
+{% block css %}
+
+<link href="{% static 'assets/css/teststyle.css' %}" rel="stylesheet">
+<link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+{% endblock %}
+{% block content %}
+<main id="main" >
+
+    <!-- ======= Hero Section ======= -->
+    <section id="homesection" style="padding: 0px 0px;
+	margin-bottom: 92px;">
+<!--__________________________________ header-box______________________________________________ -->
+<div id="header-container" style="
+ background-image: url(/static/assets/img/slide/Rectangle%203.png);
+ background-repeat: no-repeat;
+ height: 32vh;
+ background-position: center bottom;
+ background-size: 100% auto;
+ "></div>
+<div id="header-container">
+	<h1 id="header2">ANÁLISE DE CONJUNTO DE DADOS DE CARTÃO DE CRÉDITO</h1>
+</div>
+<!-- ___________________________________main-division____________________________________________ -->
+
+<div class="fraud-container" style="margin-bottom: 10px; border: 0px solid black; ">
+	<div style="border: 1px solid black ">
+	<div class="fraud-header-container" >
+		<h3 class="fraud-header">Análise do Conjunto de Dados</h3>
+	</div>
+	<div class="result-table1">
+		<table style="margin-bottom: 0px;margin-top: 0;">
+			
+			<tr>
+				<th style="
+				background-color: #D9D9D9;
+				color: black;
+			">Nome do Algoritmo</th>
+				<th style="
+				background-color: #D9D9D9;
+				color: black;
+			">Pontuação de Precisão</th>
+			</tr>
+			<tr>
+				<td>Tamanho de dados</td>
+				<td>({{ size1 }},{{ size2 }})</p></td>
+			</tr>
+			
+			<tr>
+				<td>Valores Únicos do target</td>
+				<td>[0 1]</td>
+			</tr>
+			<!--
+			<tr>
+				<td>Porcentagem de clientes sem problemas de crédito:</td>
+				<td>99.62%</td>
+			</tr>
+			<tr>
+				<td>Porcentagem de clientes com problemas de crédito:</td>
+				<td>0.38%</td>
+			</tr>
+			-->
+			<tr>
+				<td>Existe algum valor nulo</td>
+				<td>{{ existe_valor_nulo }}</td>
+			</tr>
+			<tr>
+				<td>Transação fraudulenta total no conjunto de dados (formato de dados)</td>
+				<td>({{ total_classe_1 }},{{ size2 }})</td>
+			</tr>
+			<tr>
+				<td>Transação normal total no conjunto de dados (formato de dados)</td>
+				<td>({{ total_classe_0 }},{{ size2 }})</td>
+			</tr>
+		</table>
+	</div>
+    
+</div>
+
+
+
+<div style="margin-top: 50px;border: 1px solid black ;">
+	<div class="fraud-header-container">
+		<h3 class="fraud-header">Sistema de Detecção de Fraude de Cartão de Crédito - Análise de Fraude</h3>
+	</div>
+	<div class="result-table1"style="border-width: 2px 1px 1px 1px;border-style: solid;border-color: black;">
+		<table style="
+		margin-bottom: 0px;
+	">
+			<h3 style="
+			color: #094F76;
+		">Algoritmo Usado</h3>
+			<tr style="
+			border-top: 2px solid black;
+		    ">
+				<th style="
+				color: black;background-color: #D9D9D9;">Nome do Algoritmo</th>
+				<th style="
+				color: black;background-color: #D9D9D9;">Pontuação de Precisão</th>
+				
+			</tr>
+			<tr>
+				<td>Random Forrest</td>
+				<td>99.94</td>
+				
+			</tr>
+		</table>
+	</div>
+
+
+
+
+
+
+	
+
+</div>
+
+    </section><!-- End Hero -->
+  
+    </main>
+  
+{% endblock %}
+
+
+{% block style %}
+
+.btn{
+	width: 100%;
+	margin: 0px auto 0px auto;
+	padding: 10px;
+	color: #FFFFFF;
+	font-size: 15px;
+	background-color: #5cb874;
+	border-style: none;
+	 
+}
+.btn:hover{
+	opacity: 0.8;
+}
+.btn-cover{
+	width: 90%;
+	margin: 20px auto 10px auto;
+
+}
+
+.fraud-container .result-tabel1 table,th,td{
+	border-width: 1px;
+	border-color: black;
+	border-style: solid;
+	border-spacing: 0px;
+
+}
+.fraud-container .result-table1 table,h3{
+	width: 100%;
+	text-align: center;
+}
+.fraud-container .result-table1 h3{
+	color:#5cb874 ;
+}
+
+.fraud-container .result-table1 td,th {
+	padding: 10px;
+}
+.fraud-container .result-table1 th{
+	background-color: #5cb874;
+	color: #FFFFFF;
+}
+.fraud-container .result-table1 table{
+	margin-bottom:20px;
+	margin-top:20px; 
+}
+.fraud-container .result-table1 .c-odd{
+	background-color: #5cb874;
+	width: 20%;
+	color: #FFFFFF;
+}
+.result-table1 table {
+  table-layout: fixed ;
+  width: 100% ;
+  border-spacing: 0px;
+}
+.result-table1 td {
+  width: 25% ;
+}
+
+{% endblock %}

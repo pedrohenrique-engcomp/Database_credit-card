@@ -1,0 +1,51 @@
+
+{% extends "index.html" %}
+{% load static %}
+{% block title %}
+Home | Fraud Detection System
+{% endblock %}
+{% block css %}
+
+<link href="{% static 'assets/css/teststyle.css' %}" rel="stylesheet">
+<link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<main id="main" >
+
+  <!-- ======= Hero Section ======= -->
+  <section id="homesection" style="padding: 0px 0px;
+  ">
+	<!--__________________________________ header-box______________________________________________ -->
+	<div id="header-container" style="
+	background-image: url(/static/assets/img/slide/Rectangle%203.png);
+	background-repeat: no-repeat;
+	height: 32vh;
+	background-position: center bottom;
+	background-size: 100% auto;
+	"></div>
+	<div id="header-container">
+		<h1 id="header2">DETECÇÃO DE FRAUDE</h1>
+	</div>
+<!-- ___________________________________main-division____________________________________________ -->
+
+	<div class="fraud-container" style="margin-bottom: 25px;">
+		<div class="fraud-header-container">
+			<h3 class="fraud-header">ESCOLHA O TIPO DE DADO QUE DESEJA VERIFICAR PARA DETECÇÃO DE FRAUDE</h3>
+		</div>
+		<div id="fraud-buttons-container">
+			
+			<form>
+			<a href="{% url 'add_files_multi' %}"><div class="fraud-buttons">UPLOAD ARQUIVO CSV COM SUPORTE A CLIENTE </div></a>
+		    </form>
+
+		</div>
+	</div>
+  </section><!-- End Hero -->
+
+  </main>
+
+  
+{% endblock %}
+
+	

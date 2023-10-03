@@ -1,0 +1,91 @@
+{% extends "index.html" %}
+{% load static %}
+{% block title %}
+Home | Fraud Detection System
+{% endblock %}
+{% block css %}
+
+<link href="{% static 'assets/css/teststyle.css' %}" rel="stylesheet">
+<link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<main id="main" >
+  
+  <!-- ======= Hero Section ======= -->
+  <section id="homesection" style="padding: 0px 0px;">
+   <!--__________________________________ header-box______________________________________________ -->
+ <div id="header-container" style="
+ background-image: url(/static/assets/img/slide/Rectangle%203.png);
+ background-repeat: no-repeat;
+ height: 32vh;
+ background-position: center bottom;
+ background-size: 100% auto;
+ "></div>
+<div id="header-container">
+  <h1 id="header2">PAINEL DO USUÁRIO</h1>
+</div>
+<!-- ___________________________________main-division____________________________________________ -->
+<div id="main-container">
+  <div class="inner-box" style="
+  margin-right: 60px;
+">
+    <svg viewBox="0 0 80 80" width="200px" height="200px">
+      <a href="{% url 'upload_credit_data' %}">
+        <circle class="circle" cx="40" cy="40" r="38"/>
+        <text x="40" y="35" font-size="10px" fill="#FFFFFF" text-anchor="middle">Upload</text>
+        <text x="40" y="47" font-size="10px" fill="#FFFFFF" text-anchor="middle">de Arquivos</text></a>
+    </svg>
+  </div>
+
+  <div class="inner-box" style="
+  margin-right: 60px;
+">
+    <svg viewBox="0 0 80 80" width="200px" height="200px">
+      <a href="{% url 'reports' %}">
+        <circle class="circle" cx="40" cy="40" r="38"/>
+        <text x="40" y="35" font-size="10px" fill="#FFFFFF" text-anchor="middle">Relatório</text>
+        <text x="40" y="47" font-size="10px" fill="#FFFFFF" text-anchor="middle">de Arquivos</text></a>
+    </svg>
+  </div>
+  
+  <div class="inner-box" style="
+  margin-right: 60px;
+">
+    <svg viewBox="0 0 80 80" width="200px" height="200px">
+      <a href="{% url 'prediction_button' %}">
+        <circle class="circle" cx="40" cy="40" r="38"/>
+        <text x="40" y="35" font-size="10px" fill="#FFFFFF" text-anchor="middle">Detecção</text>
+        <text x="40" y="47" font-size="10px" fill="#FFFFFF" text-anchor="middle">Cliente</text></a>
+    </svg>
+  </div>
+  
+  <div class="inner-box" style="
+  margin-right: 60px;
+">
+    <svg viewBox="0 0 80 80" width="200px" height="200px">
+      <a href="{% url 'change_password' %}">
+        <circle class="circle" cx="40" cy="40" r="38"/>
+        <text x="40" y="35" font-size="10px" fill="#FFFFFF" text-anchor="middle">Mudar</text>
+        <text x="40" y="47" font-size="10px" fill="#FFFFFF" text-anchor="middle">Senha</text></a>
+    </svg>
+  </div>
+
+  <div class="inner-box" style="
+  margin-right: 60px;
+">
+    <svg viewBox="0 0 80 80" width="200px" height="200px">
+      <a href="">
+        <circle class="circle" cx="40" cy="40" r="38"/>
+        <text x="40" y="40" font-size="10px" fill="#FFFFFF" text-anchor="middle">Logout</text></a>
+    </svg>
+  </div>
+  
+</div>
+  </section><!-- End Hero -->
+
+  </main>
+
+  
+{% endblock %}
+  

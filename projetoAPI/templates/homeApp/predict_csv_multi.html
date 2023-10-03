@@ -1,0 +1,204 @@
+{% extends "index.html" %}
+{% load static %}
+{% block title %}
+Home | Fraud Detection System
+{% endblock %}
+
+{% block css %}
+
+<link href="{% static 'assets/css/teststyle.css' %}" rel="stylesheet">
+<link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+{% endblock %}
+{% block content %}
+<style>
+    
+    .table-container {
+    width: 90%;
+    overflow-x: auto; 
+    max-height: 500px; 
+    margin: 5% 5% 5% 5%;
+  }
+    .example {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+  
+    .example th,
+    .example td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+      white-space: nowrap; 
+      overflow: hidden; 
+      text-overflow: ellipsis; 
+      width: 170px;
+    }
+  
+    .example th {
+      background-color: #f2f2f2;
+    }
+  
+    .example tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+  
+    .example tr:hover {
+      background-color: #ddd;
+    }
+  </style>
+<main id="main" >
+
+    <!-- ======= Hero Section ======= -->
+    <section id="homesection" style="padding: 0px 0px;"></section> 
+         <!--__________________________________ header-box______________________________________________ -->
+         <div id="header-container" style="
+         background-image: url(/static/assets/img/slide/Rectangle%203.png);
+         background-repeat: no-repeat;
+         height: 32vh;
+         background-position: center bottom;
+         background-size: 100% auto;
+         "></div>
+ <div id="header-container">
+	<h1 id="header2">Resultado de Predição do Cliente</h1>
+
+</div>
+<div class="container" style="width: 90%;margin-top: 13px;" >
+
+
+<h1 style="width: 100%;text-align: center; color: #094F76;">Cliente {{ text_result }}</h1>
+
+
+</div>
+
+<div class="table-container">
+    <table id="example">
+    <thead>
+        <tr>
+            <th>SrNo.</th>
+            <th>CPF</th>
+            <th>Time</th>
+            <th>V1</th>
+            <th>V2</th>
+            <th>V3</th>
+            <th>V4</th>
+            <th>V5</th>
+            <th>V6</th>
+            <th>V7</th>
+            <th>V8</th>
+            <th>V9</th>
+            <th>V10</th>
+            <th>V11</th>
+            <th>V12</th>
+            <th>V13</th>
+            <th>V14</th>
+            <th>V15</th>
+            <th>V16</th>
+            <th>V17</th>
+            <th>V18</th>
+            <th>V19</th>
+            <th>V20</th>
+            <th>V21</th>
+            <th>V22</th>
+            <th>V23</th>
+            <th>V24</th>
+            <th>V25</th>
+            <th>V26</th>
+            <th>V27</th>
+            <th>V28</th>
+            <th>Amount</th>
+            <th>Class</th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr data-row-num="{{ forloop.counter }}">
+    {% for row in result_data.iterrows %}
+    
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ row.1.CPF }}</td>
+        <td>{{ row.1.Time }}</td>
+        <td>{{ row.1.V1 }}</td>
+        <td>{{ row.1.V2 }}</td>
+        <td>{{ row.1.V3 }}</td>
+        <td>{{ row.1.V4 }}</td>
+        <td>{{ row.1.V5 }}</td>
+        <td>{{ row.1.V6 }}</td>
+        <td>{{ row.1.V7 }}</td>
+        <td>{{ row.1.V8 }}</td>
+        <td>{{ row.1.V9 }}</td>
+        <td>{{ row.1.V10 }}</td>
+        <td>{{ row.1.V11 }}</td>
+        <td>{{ row.1.V12 }}</td>
+        <td>{{ row.1.V13}}</td>
+        <td>{{ row.1.V14 }}</td>
+        <td>{{ row.1.V15 }}</td>
+        <td>{{ row.1.V16 }}</td>
+        <td>{{ row.1.V17 }}</td>
+        <td>{{ row.1.V18 }}</td>
+        <td>{{ row.1.V19 }}</td>
+        <td>{{ row.1.V20 }}</td>
+        <td>{{ row.1.V21 }}</td>
+        <td>{{ row.1.V22}}</td>
+        <td>{{ row.1.V23 }}</td>
+        <td>{{ row.1.V24 }}</td>
+        <td>{{ row.1.V25 }}</td>
+        <td>{{ row.1.V26 }}</td>
+        <td>{{ row.1.V27 }}</td>
+        <td>{{ row.1.V28 }}</td>
+        <td>{{row.1.Amount}}</td>
+        <td>{{row.1.Class}}</td>
+    </tr>
+    </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+    </div>
+    
+    </section><!-- End Hero -->
+  
+    </main>
+
+
+    <script>
+      $(document).ready(function() {
+        $('#example').DataTable( {
+            dom: 'Bfrtip',
+            buttons: [
+            { 
+          extend: 'copy',
+          text: 'Copy'
+       },
+            { 
+          extend: 'excel',
+          text: 'Download excel'
+       },
+           
+           
+            ],
+            initComplete: function () {
+                var btns = $('.dt-button');
+                btns.addClass('btn btn-primary btn-sm ');
+                btns.removeClass('dt-button');
+    
+            }
+        } );
+    } );
+    </script>
+    <script>
+        
+        const tableRows = document.querySelectorAll('#example tbody tr[data-row-num]');
+        const rowsToShow = 12; 
+    
+        
+        tableRows.forEach(row => {
+            const rowNumber = parseInt(row.dataset.rowNum);
+            if (rowNumber > rowsToShow) {
+                row.style.display = 'none';
+            }
+        });
+    </script>
+{% endblock %}
+
+
